@@ -37,15 +37,17 @@ app.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
-/* GET home page. */
-app.post('/sendemail', function(req, res) {
+/* Contact Us*/
+app.post('/send', function(req, res) {
 
   var toEmail= req.body.toEmail;
-  var subject = req.body.subject;
+  var subject = req.body.toSubject;
+
+  var toRedirect = req.body.toRedirect;
 
   var dataContact = { email: req.body.fromEmail,
-                      name: req.body.toName,
-                      message: req.body.toMessage }
+                      name: req.body.fromName,
+                      message: req.body.fromMessage }
 
   console.log(dataContact, toEmail, subject);
 
@@ -57,10 +59,14 @@ app.post('/sendemail', function(req, res) {
     console.log('Ocurrio un Error', err);
   });
 
+  var site = toRedirect.replace('http://','').replace('https://', '')
 
-  res.json('Send Email Success');
+  var callbackRedirect = 'http://' + site
 
+  res.redirect(callbackRedirect);
 });
+
+/* END CONTACT US*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -68,8 +74,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-
 
 
 // error handlers

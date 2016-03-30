@@ -1,31 +1,44 @@
 extends layout
 
 block content
-  h1
-    | Hola esto es una prueba
-  p Welcome to #{title}
-  form(action='/sendemail' method='post')
-    label
-      |  toEmail
-    input(name='toEmail' type='text')
-    br
-    label
-      |  fromEmail
-    input(name='fromEmail' type='text')
-    br
-    label
-      |  toName
-    input(name='toName' type='text')
-    br
-    label
-      |  subject
-    input(name='subject' type='text')
-    br
-    label
-      |  toMessage
-    textarea(name='toMessage')
+  h1.text-center
+    | SEND EMAIL
 
-    input(type='submit')
+  form(action='/send' method='post')
+    .container
+      .field-groups
+        label
+          |  YOU EMAIL (toEmail)
+        input(name='toEmail' type='text')
+      br
+      .field-groups
+        label
+          |  YOU SUBJECT (toSubject)
+        input(name='toSubject' type='text')
+      br
+      .field-groups
+        label
+          |  YOU WEB SITE REDIRECT (toRedirect)
+        input(name='toRedirect' type='text')
+      br
+      hr
+      br
+      .field-groups
+        label
+          |  CONTACT EMAIL (fromEmail)
+        input(name='fromEmail' type='text')
+      br
+      .field-groups
+        label
+          |  CONTACT NAME (fromName)
+        input(name='fromName' type='text')
+      br
+      .field-groups
+        label
+          |  CONTACT MESSAGE (fromMessage)
+        textarea(name='fromMessage')
+      br
+      input(type='submit' value='SEND')
 
 
 

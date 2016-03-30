@@ -6,3 +6,37 @@ body {
 a {
   color: #00B7FF;
 }
+
+.container {
+  width: 400px;
+  margin: auto;
+  border: 1px solid #ccc;
+  padding: 50px;
+}
+
+.field-groups *{
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.field-groups textarea {
+  min-height: 100px;
+}
+
+.field-groups input{
+  height: 50px;
+}
+
+
+input[type='submit'] {
+  border: none;
+  background-color: #2196F3;
+  color: white;
+  height: 50px;
+  width: 100px;
+}
+
+.text-center {
+  text-align: center;
+}
