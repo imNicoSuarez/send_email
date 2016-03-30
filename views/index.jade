@@ -5,7 +5,15 @@ block content
     | SEND EMAIL
 
   form(action='/send' method='post')
+
     .container
+      p
+        strong ACTION: http://send-contact.herokuapp.com/send
+      p
+        strong METHOD: POST
+
+      br
+
       .field-groups
         label
           |  YOU EMAIL (toEmail)
