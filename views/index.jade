@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1
+    | Hola esto es una prueba
+  p Welcome to #{title}
+  form(action='/sendemail' method='post')
+    label
+      |  toEmail
+    input(name='toEmail' type='text')
+    br
+    label
+      |  fromEmail
+    input(name='fromEmail' type='text')
+    br
+    label
+      |  toName
+    input(name='toName' type='text')
+    br
+    label
+      |  subject
+    input(name='subject' type='text')
+    br
+    label
+      |  toMessage
+    textarea(name='toMessage')
+
+    input(type='submit')
+
+
+

@@ -1,0 +1,19 @@
+table(border='0', cellpadding='0', cellspacing='0', width='100%', style='background-color: #fff; border: 1px solid #CCCCCC;')
+    tr
+      td(align='center', valign='top', style='padding-top: 20px; padding-right: 20px; padding-left: 20px;')
+        table(border='0', cellpadding='0', cellspacing='0', width='100%')
+          tr
+            td(valign='top', style='padding-bottom: 20px; font-family: Helvetica;')
+          tr
+            td(valign='top', style='color: #404040; font-family: Helvetica; font-size: 16px; line-height: 125%; text-align: left; padding-bottom: 20px;')
+              br
+              h4
+                | El email :
+                = data.email
+              h4
+               | Nombre:
+               = data.name
+              br
+              p
+                strong Mensaje:
+                = data.message
